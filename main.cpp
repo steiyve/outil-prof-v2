@@ -1,17 +1,15 @@
 #include <iostream>
 #include "src/creatList.cpp"
+#include "src/prisePresence.cpp"
+#include <string>
 
 using namespace std;
 
 int main()
 {
-    string* classe = creatList();
-    for (int i = 0; i < 40; i++)
-    {
-        cout << classe[i] << endl;
-    }
-    saveList(classe);
-
+    creatList();
+    prisePresence();
+    
     cout << "Hello World!" << endl;
     return 0;
 }
