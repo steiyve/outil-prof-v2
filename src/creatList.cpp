@@ -9,6 +9,7 @@ string* creatList()
     static string classe[40];
     string nomGroupe;
 
+
     int numEleves;
     cout << "Combien d'eleves dans la classe ? ";
     cin >> numEleves;
@@ -18,6 +19,7 @@ string* creatList()
         cout << "Nom de l'eleve " << i + 1 << " : ";
         cin >> classe[i];
     }
+
     for (int i = 0; i < numEleves; i++)
     {
         cout << classe[i] << endl;
@@ -36,3 +38,5 @@ string* creatList()
     
     return classe;
 }
+
+

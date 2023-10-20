@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+*.exe.stackdump
+
+# Specific directory
+/var
+/output
+
