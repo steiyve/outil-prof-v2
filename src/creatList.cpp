@@ -4,9 +4,8 @@
 
 using namespace std;
 
-string* creatList()
-{
-    static string classe[40];
+void creatList(){
+    static string classe[40][2];
     string nomGroupe;
 
 
@@ -14,15 +13,9 @@ string* creatList()
     cout << "Combien d'eleves dans la classe ? ";
     cin >> numEleves;
 
-    for (int i = 0; i < numEleves; i++)
-    {
+    for (int i = 0; i < numEleves; i++){
         cout << "Nom de l'eleve " << i + 1 << " : ";
-        cin >> classe[i];
-    }
-
-    for (int i = 0; i < numEleves; i++)
-    {
-        cout << classe[i] << endl;
+        cin >> classe[i][0];
     }
 
     cout << "Nom du groupe : ";
@@ -31,12 +24,11 @@ string* creatList()
 
     ofstream file;
     file.open(nomFichier, ios::app);
-    for (int i = 0; i < numEleves; i++)
-    {
-        file << classe[i] << endl;
+    for (int i = 0; i < numEleves; i++){
+        classe[i][1] = "present";
+        file << classe[i][0] << " : " << endl;
     }
     
-    return classe;
 }
 
 
