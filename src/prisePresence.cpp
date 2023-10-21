@@ -21,21 +21,18 @@ void prisePresence()
 
     int pos = 0;
     while (getline(file, line)) {
-        cout << line << endl;
+
         classe[pos][0] = line;
-        cout << line << " Absent ? (oui/non) : ";
+        cout << line << "\n Absent ? (oui/non) : ";
         cin >> etatEleve;
 
-        if (etatEleve == "oui")
-        {
+        if (etatEleve == "oui"){
             etatEleve = "absent";
         }
-        else if (etatEleve == "non")
-        {
+        else if (etatEleve == "non"){
             etatEleve = "present";
         }
-        else
-        {
+        else{
             cout << "Erreur, veuillez repondre par oui ou non" << endl;
             cin >> etatEleve;
         }
@@ -47,10 +44,10 @@ void prisePresence()
 
 
     ofstream file2;
-    file2.open(nomFichier, ios::app);
-    for (int i = 0; i < 40; i++)
-    {
-        file2 << classe[i][0] << " : " << classe[i][1] << endl;
+    file2.open(nomFichier, ios::trunc);
+    for (int i = 0; i < pos; i++){
+        file2 << classe[i][0] << classe[i][1] << endl;
+
     }
     file2.close();
 
