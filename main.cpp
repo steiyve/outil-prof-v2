@@ -7,9 +7,15 @@ using namespace std;
 
 int main()
 {
-    creatList();
-    prisePresence();
+    if (!creatList()){
+        return -1;
+    }
+
+    if (!prisePresence()){
+        return -1;
+    }
     
+
     cout << "Hello World!" << endl;
     return 0;
 }
