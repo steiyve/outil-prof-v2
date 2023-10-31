@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int prisePresence()
+void prisePresence()
 {
     string nomGroupe;
     string classe[40][2];
@@ -17,7 +17,6 @@ int prisePresence()
 
     if (!file.is_open()) {
         cout << "Erreur lors de l'ouverture du fichier" << endl;
-        return -1;
     }
 
     string line;
@@ -26,7 +25,7 @@ int prisePresence()
     while (getline(file, line)) {
         if (pos >= 40) {
             cout << "Erreur: trop d'eleves dans la liste" << endl;
-            return -2;
+
         }
 
         classe[pos][0] = line;
@@ -50,14 +49,11 @@ int prisePresence()
 
     if (!file2.is_open()) {
         cout << "Erreur lors de l'ouverture du fichier" << endl;
-        return -1;
     }
 
     for (int i = 0; i < pos; i++) {
-        file2 << classe[i][0] << classe[i][1] << endl;
+        file2 << classe[i][0] << classe[i][1] << " " << endl;
     }
 
     file2.close();
-    
-    return 0;
 }

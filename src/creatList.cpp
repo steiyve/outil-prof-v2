@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int creatList() {
+void creatList() {
     static string classe[40][2];
     string nomGroupe;
 
@@ -14,7 +14,7 @@ int creatList() {
 
     if (numEleves <= 0) {
         cout << "Erreur: le nombre d'eleves doit etre superieur a 0" << endl;
-        return -2;
+        
     }
 
     for (int i = 0; i < numEleves; i++) {
@@ -30,7 +30,7 @@ int creatList() {
 
     if (!file.is_open()) {
         cout << "Erreur lors de l'ouverture du fichier" << endl;
-        return -1;
+        
     }
 
     for (int i = 0; i < numEleves; i++) {
@@ -40,5 +40,5 @@ int creatList() {
 
     file.close();
 
-    return 0;
+   
 }
